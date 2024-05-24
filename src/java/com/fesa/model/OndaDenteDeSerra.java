@@ -21,7 +21,7 @@ public class OndaDenteDeSerra extends Onda {
         double step = 2.0 / period; // Step size to ensure the wave increases linearly
 
         for (int i = 0; i < N; i++) {
-            points[i] = -1 + (i % period) * step;
+            points[i] = (i % period) * step;
         }
 
         return points;

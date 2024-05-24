@@ -10,7 +10,6 @@
 <html>
     <jsp:include page="head.jsp"></jsp:include>
     <body>
-        <jsp:include page="navbar.jsp"></jsp:include>
         <div class="container">
             <h1 class="text-danger">Error.</h1>
             <h2 class="text-danger">${message}</h2>

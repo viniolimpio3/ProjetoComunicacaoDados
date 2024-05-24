@@ -34,7 +34,7 @@
                             <div class="col">
                                 <div class="mb-3">
                                     <label for="frequenciaFundamental" class="form-label">Frequência Fundamental (entre 1kHz e 100kHz):</label>
-                                    <input required type="number" min="1" max="100" id="frequenciaFundamental" name="frequenciaFundamental" class="form-control freq">
+                                    <input required type="number" min="0" max="100" id="frequenciaFundamental" name="frequenciaFundamental" class="form-control freq">
                                 </div>
                             </div>
                         </div>
@@ -42,17 +42,17 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label for="frequenciaInicial" class="form-label" id="text-freq">Frequência Inicial (entre 1kHz e 100kHz):</label>
-                                    <input type="number" min="1" max="100" id="frequenciaInicial" name="frequenciaInicial" class="form-control freq">
+                                    <input type="number" min="0" max="100" id="frequenciaInicial" required name="frequenciaInicial" class="form-control freq">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="mb-3" id="divFrequenciaFinal">
                                     <label for="frequenciaFinal" class="form-label">Frequência Final (entre 1kHz e 100kHz):</label>
-                                    <input type="number" min="1" max="100" id="frequenciaFinal" name="frequenciaFinal" class="form-control freq">
+                                    <input type="number" min="0" max="100" id="frequenciaFinal" required name="frequenciaFinal" class="form-control freq">
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="btn btn-dark">Enviar</button>
                     </form>
                 </div>
             </div>

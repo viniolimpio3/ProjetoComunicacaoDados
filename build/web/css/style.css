@@ -1,0 +1,261 @@
+/* Reset CSS */
+body {
+    background-image: url('../images/onda_home.jpeg');
+    background-size: cover;
+    text-align: center;
+    color: white; /* Alterando a cor do texto para branco */
+/*    padding-top: 50px;*/
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    background-color: rgba(0, 0, 0, 0.8); /* Adicionando uma cor de fundo semi-transparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+body {
+    font-family: 'Ubuntu', monospace;
+    font-size: 16px;
+    background-color: #282c35; /* Um tom escuro de azul para o fundo */
+    color: #e0e0e0; /* Uma cor clara para o texto */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    background-color: #1f2330; /* Tom mais escuro para o cabeçalho */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.5s ease;
+}
+
+header h1 {
+    font-family: 'Ubuntu', monospace;
+    font-size: 28px;
+    transition: color 0.5s ease;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #81a1c1; /* Uma cor mais clara ao passar o mouse */
+}
+
+/* Main content styles */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Form styles */
+.calculator-form {
+    background-color: #2e3440;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #fff;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #4d5463; /* Um tom mais escuro de cinza para a borda */
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #323944; /* Uma tonalidade mais escura de cinza para o fundo do input */
+    color: #fff;
+}
+
+input[type="submit"] {
+    background-color: #81a1c1; /* Um tom mais claro de azul para o botão submit */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #5e81ac; /* Uma cor mais escura ao passar o mouse */
+}
+
+/* Corp section styles */
+.corp-section {
+    background-color: #2e3440;
+    padding: 10px; /* Reduzindo o padding para tornar a caixa menor */
+    border-radius: 8px; /* Reduzindo a borda para suavizar a aparência */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px; /* Defina o tamanho máximo desejado */
+    margin: 0 auto 20px; /* Centraliza a seção e adiciona margem na parte inferior */
+}
+
+.corp-section h2 {
+    font-size: 18px; /* Reduzindo o tamanho da fonte do título */
+    margin-bottom: 7px;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+    color: #d8dee9; /* Uma cor mais clara para o texto dentro da lista */
+}
+
+/* Footer styles */
+footer {
+    background-color: #1f2330;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Mantém o rodapé na parte inferior da tela */
+    font-size: 12px; /* Tamanho da fonte reduzido */
+    border-top: 1px solid #4d5463; /* Adiciona uma borda superior para separar do conteúdo principal */
+}
+
+/* Ajuste para a caixa dentro do rodapé */
+footer .corp-section {
+    width: 100%;
+    max-width: 95%; /* Ajuste para garantir que a caixa não fique muito grande */
+}
+
+/* Graphics styles */
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1 {
+    font-family: 'Ubuntu', monospace;
+    font-size: 24px; /* Reduzindo o tamanho da fonte para melhorar a aparência */
+    transition: color 0.5s ease;
+}
+a.btn, button.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-top: 10px;
+    border-radius: 8px;
+    background-color: #002d4d33;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+a.btn:hover {
+    background-color: #005580;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.result-section {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+.result-box {
+    background-color: #2e3440;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.result-section h1 {
+    font-size: 24px; /* Reduzindo o tamanho da fonte para melhorar a aparência */
+    margin-bottom: 20px;
+    color: #81a1c1;
+}
+.result-section p {
+    font-size: 14px; /* Reduzindo o tamanho da fonte para melhorar a aparência */
+    margin-bottom: 15px;
+    color: #d8dee9;
+}
+.result-values {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.result-values p {
+    width: 48%;
+    margin: 8px 0;
+}
+.chart-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.chart-section h2 {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 20px; /* Reduzindo o tamanho da fonte para melhorar a aparência */
+}
+.highlighted-chart {
+    text-align: center;
+}
+.highlighted-chart h2 {
+    font-size: 24px; /* Reduzindo o tamanho da fonte para melhorar a aparência */
+    color: #81a1c1; /* Cor mais clara para destacar o Gráfico 1 */
+}
+.side-by-side-charts {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%; /* Ocupar toda a largura do contêiner */
+    box-sizing: border-box; /* Evitar problemas de layout */
+}
+.side-by-side-charts div {
+    width: 48%;
+    box-sizing: border-box; /* Evitar problemas de layout */
+}
+canvas {
+    border: 2px solid #4d5463; /* Um tom mais escuro de cinza para a borda */
+    margin: 20px;
+    border-radius: 12px;
+    background-color: #323944; /* Uma tonalidade mais escura de cinza para o fundo do gráfico */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Ocupar toda a largura do contêiner */
+    height: auto; /* Adapta a altura automaticamente para manter a proporção */
+}
+.side-by-side-charts button {
+    display: none; /* Ocultar os botões inicialmente */
+}
+.expanded canvas {
+    width: 100%;
+}
+.expanded button {
+    display: block; /* Mostrar botões quando o gráfico estiver expandido */
+}

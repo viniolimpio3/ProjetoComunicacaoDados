@@ -52,10 +52,11 @@ const chart = new Chart(ctx, {
                 borderWidth: 1,
                 pointRadius: 0, // Remove os pontos dos dados
                 fill: false,
-                stepped: true // Adiciona passos para uma onda quadrada
+                stepped: false // Adiciona passos para uma onda quadrada
             }]
     },
     options: {
+        responsive: true,
         scales: {
             x: {
                 type: 'linear',
@@ -70,7 +71,7 @@ const chart = new Chart(ctx, {
                     display: true,
                     text: 'Amplitude'
                 },
-                suggestedMin: -1.5,
+                suggestedMin: 0,
                 suggestedMax: 1.5
             }
         }
