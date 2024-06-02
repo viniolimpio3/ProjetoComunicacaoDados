@@ -4,10 +4,8 @@
  */
 package com.fesa.model.onda;
 
-import com.fesa.model.canal.Canal;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.HashMap;
 
 /**
  *
@@ -17,7 +15,7 @@ public class OndaQuadrada extends Onda {
 
     //TODO: Review
     public double[] calcOndaEmitida() {
-        int frequencia = this.getFrequenciaFundamental();
+        double frequencia = this.getFrequenciaFundamental();
 
         // Parâmetros da onda
         double fase = 0; // Fase inicial da onda
@@ -57,9 +55,6 @@ public class OndaQuadrada extends Onda {
     public void calcAnBn() {
         // Calcula array an e bn e An
         for (int i = 0; i < this.getNumeroHarmonicas(); i++) {
-
-//            double an = (double) Math.round(((1 / Math.PI) * i) * (2 * Math.sin(Math.PI * 1)) - Math.sin(2 * Math.PI * i));
-//            double bn = (double) (2 / (Math.PI * i) * (1 - Math.cos(Math.PI * i)));
 
             double an = 0;
             double bn = i % 2 == 0 ? 0 : 4 / (Math.PI * i);

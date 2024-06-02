@@ -19,7 +19,7 @@ public class OndaDenteDeSerra extends Onda {
         int N = 10000; // Número total de amostras
         double[] points = new double[N];
 
-        int frequencia = this.getFrequenciaFundamental(); // Frequência da onda em Hz
+        double frequencia = this.getFrequenciaFundamental(); // Frequência da onda em Hz
         double periodo = (double) N / (frequencia * 2); // Período da onda em número de amostras
         double step = 1.0 / (periodo - 1); // Tamanho do passo para garantir que a onda aumenta linearmente até 1
 

@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class OndaSenoidalRetificada extends Onda {
     @Override
     public double[] calcOndaEmitida() {
-        int frequencia = this.getFrequenciaFundamental();
+        double frequencia = this.getFrequenciaFundamental();
 
         // Parâmetros da onda
         double fase = 0; // Fase inicial da onda

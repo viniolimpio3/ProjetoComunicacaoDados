@@ -70,7 +70,7 @@ const chartFaseEntrada = new Chart(ctxFaseEntrada, {
                 position: 'bottom',
                 title: {
                     display: true,
-                    text: 'Frequência (Hz)'
+                    text: 'Frequência (kHz)'
                 }
             },
             y: {
@@ -110,7 +110,7 @@ const chartEspectroAmpEntrada = new Chart(ctxEspectroAmpEntrada,{
                 position: 'bottom',
                 title: {
                     display: true,
-                    text: 'Frequência (Hz)'
+                    text: 'Frequência (kHz)'
                 }
             },
             y: {
@@ -152,7 +152,7 @@ const chartModCanal = new Chart(ctxModuloCanal, {
                 position: 'bottom',
                 title: {
                     display: true,
-                    text: 'Frequência (Hz)'
+                    text: 'Frequência (kHz)'
                 }
             },
             y: {
@@ -194,7 +194,7 @@ const chartFaseCanal = new Chart(ctxFaseCanal, {
                 position: 'bottom',
                 title: {
                     display: true,
-                    text: 'Frequência (Hz)'
+                    text: 'Frequência (kHz)'
                 }
             },
             y: {
@@ -233,7 +233,7 @@ const chartAmpSaida = new Chart(ctxAmpSaida,{
                 position: 'bottom',
                 title: {
                     display: true,
-                    text: 'Frequência (Hz)'
+                    text: 'Frequência (kHz)'
                 }
             },
             y: {
@@ -272,7 +272,7 @@ const chartFaseSaida = new Chart(ctxFaseSaida, {
                 position: 'bottom',
                 title: {
                     display: true,
-                    text: 'Frequência (Hz)'
+                    text: 'Frequência (kHz)'
                 }
             },
             y: {

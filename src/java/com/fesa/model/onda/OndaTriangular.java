@@ -4,10 +4,8 @@
  */
 package com.fesa.model.onda;
 
-import com.fesa.model.canal.Canal;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.HashMap;
 
 /**
  *
@@ -16,7 +14,7 @@ import java.util.HashMap;
 public class OndaTriangular extends Onda {
     @Override
     public double[] calcOndaEmitida() {
-        int frequencia = this.getFrequenciaFundamental(); // Frequência da onda em Hz
+        double frequencia = this.getFrequenciaFundamental(); // Frequência da onda em Hz
         double amplitude = 1.0; // Amplitude da onda
         double duracao = 1.0; // Duração da onda em segundos
         int numAmostras = 10000; // Aumentar o número de amostras para uma alta resolução

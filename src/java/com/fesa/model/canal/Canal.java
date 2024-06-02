@@ -6,8 +6,8 @@ package com.fesa.model.canal;
 
 
 public abstract class Canal {
-    protected int freqInicial;
-    protected int freqFinal;
+    protected double freqInicial;
+    protected double freqFinal;
     
     protected final int totalFreq = 100;
     

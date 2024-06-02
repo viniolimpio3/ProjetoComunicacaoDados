@@ -9,7 +9,7 @@ import java.math.RoundingMode;
  */
 public class CanalPassaBaixa extends Canal {
 
-    public CanalPassaBaixa(int freqCorte){
+    public CanalPassaBaixa(double freqCorte){
         this.freqInicial = freqCorte * 1000; // kHz
     }
     @Override
@@ -18,13 +18,13 @@ public class CanalPassaBaixa extends Canal {
         
         for(int i=0; i < this.totalFreq; i++){
             
-            i *= 1000;
+            double f = i * 1000;
             
-            double value = 1 / Math.sqrt((1 + Math.pow(i / this.freqInicial, 1)));
+            double value = 1 / Math.sqrt((1 + Math.pow(f / this.freqInicial, 1)));
             value = Double.isNaN(value) ? 0 : value;
             
             value = (new BigDecimal(value).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
-            matriz[i / 1000] = value;
+            matriz[i] = value;
         }
         
         return matriz;
@@ -36,13 +36,13 @@ public class CanalPassaBaixa extends Canal {
         
         for(int i=0; i < this.totalFreq; i++){
             
-            i *= 1000;
+            double f = i * 1000;
             
-            double value = Math.atan(-(i / this.freqInicial));
+            double value = Math.toDegrees(Math.atan(-(f / this.freqInicial)));
             value = Double.isNaN(value) ? 0 : value;
             
             value = (new BigDecimal(value).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
-            matriz[i / 1000] = value;
+            matriz[i] = value;
         }
         
         return matriz;

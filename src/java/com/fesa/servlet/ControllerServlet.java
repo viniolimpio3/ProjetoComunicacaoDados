@@ -32,9 +32,9 @@ public class ControllerServlet extends HttpServlet {
             String tipoCanal = request.getParameter("tipoCanal");
             String tipoOnda = request.getParameter("tipoOnda");
             
-            int frequenciaInicial = Integer.parseInt(request.getParameter("frequenciaInicial"));
-            int frequenciaFinal = tipoCanal.equals("bx") ? 0 : Integer.parseInt(request.getParameter("frequenciaFinal"));
-            int frequenciaFundamental = Integer.parseInt(request.getParameter("frequenciaFundamental"));
+            double frequenciaInicial = Double.parseDouble(request.getParameter("frequenciaInicial"));
+            double frequenciaFinal = tipoCanal.equals("bx") ? 0 : Double.parseDouble(request.getParameter("frequenciaFinal"));
+            double frequenciaFundamental = Double.parseDouble(request.getParameter("frequenciaFundamental"));
             
             
             if(tipoCanal.equals("fx") && frequenciaFinal <= frequenciaInicial)

@@ -22,7 +22,7 @@ public abstract class Onda {
     
     private final int numeroHarmonicas = 100;
 
-    private int frequenciaFundamental;
+    private double frequenciaFundamental;
     private String tipoCanal;
     
     protected double[] an = new double[this.numeroHarmonicas];
@@ -51,11 +51,11 @@ public abstract class Onda {
         return numeroHarmonicas;
     }
     
-    public int getFrequenciaFundamental() {
+    public double getFrequenciaFundamental() {
         return frequenciaFundamental;
     }
 
-    public void setFrequenciaFundamental(int frequenciaFundamental) {
+    public void setFrequenciaFundamental(double frequenciaFundamental) {
         this.frequenciaFundamental = frequenciaFundamental;
     }
 
