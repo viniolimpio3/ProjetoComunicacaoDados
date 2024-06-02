@@ -76,6 +76,13 @@
 
     <script>
         var jsonEmitido = <%= request.getAttribute("emitido") %>
+        var jsonFaseEntrada = <%= request.getAttribute("jsonFaseEntrada") %>
+        var tipoOnda = '<%= request.getAttribute("tipoOnda") %>'
+        var espectroAmplitudeEntrada = <%= request.getAttribute("espectroAmplitudeEntrada") %>
+        var moduloCanal = <%= request.getAttribute("moduloCanal") %>
+        var faseCanal = <%= request.getAttribute("faseCanal") %>
+        var amplitudeSaida = <%= request.getAttribute("amplitudeSaida") %>
+        var faseSaida = <%= request.getAttribute("faseSaida") %>
     </script>
     <script src="js/index.js" charset="UTF-8"></script>
     <script src="js/graph.js" charset="UTF-8"></script>
