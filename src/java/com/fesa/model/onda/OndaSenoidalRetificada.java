@@ -5,6 +5,8 @@
 package com.fesa.model.onda;
 
 import com.fesa.model.canal.Canal;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.HashMap;
 
 /**
@@ -48,7 +50,24 @@ public class OndaSenoidalRetificada extends Onda {
 
     @Override
     public void calcAnBn() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for (int i = 0; i < this.getNumeroHarmonicas(); i++) {
+            double an = 0;
+            double bn = i == 0 ? 0 : (1 / (2 * Math.PI)) * Math.sin(Math.PI - 2 * Math.PI * i);
+            double An = 0; // TODO ?
+
+            an = Double.isNaN(an) ? 0 : an;
+            bn = Double.isNaN(bn) ? 0 : bn;
+            An = Double.isNaN(An) ? 0 : An;
+
+            an = (new BigDecimal(an).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
+            bn = (new BigDecimal(bn).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
+            An = (new BigDecimal(An).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
+
+            this.an[i] = an;
+            this.bn[i] = bn;
+
+            this.An[i] = An;
+        }
     }
 
     @Override

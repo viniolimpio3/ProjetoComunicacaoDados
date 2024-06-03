@@ -34,8 +34,8 @@ public class OndaDenteDeSerra extends Onda {
     public void calcAnBn() {
         for (int i = 0; i < this.getNumeroHarmonicas(); i++) {
             double an = 0;
-            double bn = i <= 0 ? 0 : Math.pow(2/(Math.PI * i) * (-1), i + 1);
-            double An = Math.sqrt(Math.pow(an, 2) + Math.pow(bn, 2));
+            double bn = i == 0 ? 0 : (2/(Math.PI * i)) * Math.pow(-1, i + 1);
+            double An = i == 0 ? 0 : 2 / (Math.PI * i);
 
             an = Double.isNaN(an) ? 0 : an;
             bn = Double.isNaN(bn) ? 0 : bn;
@@ -55,7 +55,13 @@ public class OndaDenteDeSerra extends Onda {
 
     @Override
     public void calcFaseEntrada() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for (int i = 0; i < this.getNumeroHarmonicas(); i++) {
+            if(i % 2 == 0){
+                this.fase[i] = Math.toDegrees(Math.PI / 2);
+            } else {
+                this.fase[i] = -(Math.toDegrees(Math.PI / 2)); 
+            }
+        }
     }
 
     @Override
