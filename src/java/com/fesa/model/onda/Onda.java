@@ -81,7 +81,7 @@ public abstract class Onda {
         
         double[] saida = new double[this.numeroHarmonicas];
         
-        double[] modCanal = canal.calcModuloFreqCanal();
+        double[] modCanal = canal.calcModuloFreqCanal(this);
         
         for(int i = 0; i < this.numeroHarmonicas; i++){
             double value = this.An[i] * modCanal[i];
@@ -98,7 +98,7 @@ public abstract class Onda {
         
         double[] saida = new double[this.numeroHarmonicas];
         
-        double[] faseCanal = canal.calcFaseCanal();
+        double[] faseCanal = canal.calcFaseCanal(this);
         
         for(int i = 0; i < this.numeroHarmonicas; i++){
             
@@ -139,5 +139,28 @@ public abstract class Onda {
     }
 
     
-    public abstract double[] calcOndaRecebida(Canal canal);
+    public double[] calcOndaRecebida(Canal canal){
+        double [] tempo = new double[1000];
+        double temp = 0; 
+        for(int i = 0; i < 1000; i++){
+            tempo[i] = temp;
+            temp += .001;
+        }
+        double[] saida = new double[tempo.length];
+        
+        double[] AN_Saida = this.calcAmplitudeSaida(canal);
+        double[] FaseSaida = this.calcFaseSaida(canal);
+        
+        for(int j=0; j < tempo.length; j++){
+            double value = 0;
+            for (int i = 0; i < 100; i++) {
+                value += AN_Saida[i] * Math.cos(2 * Math.PI * this.getFrequenciaFundamental() * i * tempo[j] + Math.toRadians(FaseSaida[i]));
+            }
+            value = Double.isNaN(value) ? 0 : value;
+            value = (new BigDecimal(value).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
+            
+            saida[j] = value; 
+        }
+        return saida;
+    }
 }

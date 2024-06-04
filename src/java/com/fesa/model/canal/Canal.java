@@ -4,6 +4,8 @@
  */
 package com.fesa.model.canal;
 
+import com.fesa.model.onda.Onda;
+
 
 public abstract class Canal {
     protected double freqInicial;
@@ -11,7 +13,7 @@ public abstract class Canal {
     
     protected final int totalFreq = 100;
     
-    public abstract double [] calcModuloFreqCanal();
-    public abstract double [] calcFaseCanal();
+    public abstract double [] calcModuloFreqCanal(Onda onda);
+    public abstract double [] calcFaseCanal(Onda onda);
     
 }

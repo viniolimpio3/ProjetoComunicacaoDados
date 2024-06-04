@@ -49,30 +49,4 @@ public class OndaDenteDeSerra extends Onda {
             }
         }
     }
-
-    @Override
-    public double[] calcOndaRecebida(Canal canal) {
-        double [] tempo = new double[10000];
-        double temp = 0; 
-        for(int i = 0; i < 10000; i++){
-            tempo[i] = temp;
-            temp += .0001;
-        }
-        double[] saida = new double[tempo.length];
-        
-        double [] AN_Saida = this.calcAmplitudeSaida(canal);
-        double [] FaseSaida = this.calcFaseSaida(canal);
-        
-        for(int j=0; j < tempo.length; j++){
-            double value =0;
-            for (int i = 0; i < this.getNumeroHarmonicas(); i++) {
-                value += AN_Saida[i] * Math.cos(2 * Math.PI * this.getFrequenciaFundamental() * i * tempo[j] + Math.toRadians(FaseSaida[i]));
-            }
-            value = Double.isNaN(value) ? 0 : value;
-            value = (new BigDecimal(value).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
-            
-            saida[j] = value; 
-        }
-        return saida;
-    }
 }

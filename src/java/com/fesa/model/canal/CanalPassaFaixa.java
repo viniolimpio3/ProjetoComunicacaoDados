@@ -1,5 +1,6 @@
 package com.fesa.model.canal;
 
+import com.fesa.model.onda.Onda;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -16,18 +17,16 @@ public class CanalPassaFaixa extends Canal {
     }
 
     @Override
-    public double[] calcModuloFreqCanal() {
+    public double[] calcModuloFreqCanal(Onda onda) {
         double[] matriz = new double[this.totalFreq];
         
         
         double value;
         for(int i=0; i < this.totalFreq; i++){
             
-            int f = i * 1000;
+            double f = onda.getFrequenciaFundamental() * i * 1000;
             
             value = (1 / freqInicial) * (f / Math.sqrt((1 + Math.pow((f / freqInicial), 2)) * (1 + Math.pow((f / freqFinal), 2))));
-            
-            System.out.println("aModulo> " + value + " f> " + f + " ini> " + freqInicial + " f>" + freqFinal);
             
             value = Double.isNaN(value) ? 0 : value;
             
@@ -39,11 +38,11 @@ public class CanalPassaFaixa extends Canal {
     }
 
     @Override
-    public double[] calcFaseCanal() {
+    public double[] calcFaseCanal(Onda onda) {
         double[] matriz = new double[this.totalFreq];
         
         for(int i=0; i < this.totalFreq; i++){
-            double f = i * 1000;
+            double f = onda.getFrequenciaFundamental() * i * 1000;
             double value = Math.toDegrees(-Math.PI / 2 - Math.atan((f * (this.freqInicial + this.freqFinal)) / (this.freqInicial * this.freqFinal - Math.pow(f, 2))));
             value = Double.isNaN(value) ? 0 : value;
             

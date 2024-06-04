@@ -82,8 +82,8 @@ public class ControllerServlet extends HttpServlet {
             String emitido = om.writeValueAsString(ondaEntrada.calcOndaEmitida());
             String faseEntrada = om.writeValueAsString(ondaEntrada.getFase());
             String espectroAmplitudeEntrada = om.writeValueAsString(ondaEntrada.getAn());
-            String moduloCanal = om.writeValueAsString(canal.calcModuloFreqCanal());
-            String faseCanal = om.writeValueAsString(canal.calcFaseCanal());
+            String moduloCanal = om.writeValueAsString(canal.calcModuloFreqCanal(ondaEntrada));
+            String faseCanal = om.writeValueAsString(canal.calcFaseCanal(ondaEntrada));
             String amplitudeSaida = om.writeValueAsString(ondaEntrada.calcAmplitudeSaida(canal));
             String faseSaida = om.writeValueAsString(ondaEntrada.calcFaseSaida(canal));
             String sinalSaida = om.writeValueAsString(ondaEntrada.calcOndaRecebida(canal));
