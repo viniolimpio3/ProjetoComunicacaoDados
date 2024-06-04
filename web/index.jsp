@@ -14,9 +14,9 @@
                                     <label class="mr-sm-2" for="tipoCanal">Tipo de onda</label>
                                     <select required class="form-select mr-sm-2" id="tipoOnda" name="tipoOnda">
                                         <option selected value="quadrada">Quadrada</option>
-                                        <option value="senoidal-retificada">Senoidal Retificada</option>
                                         <option value="dente-serra">Dente de Serra</option>
                                         <option value="triangular">Triangular</option>
+                                        <option value="senoidal-retificada">Senoidal Retificada</option>
                                     </select>
                                 </div>
                             </div>

@@ -14,15 +14,11 @@
         <group>
             <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/src/java/com/fesa/model/onda/OndaSenoidalRetificada.java</file>
             <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/web/js/graph.js</file>
-            <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/src/java/com/fesa/model/onda/OndaQuadrada.java</file>
             <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/src/java/com/fesa/model/onda/Onda.java</file>
-            <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/src/java/com/fesa/servlet/ControllerServlet.java</file>
+            <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/src/java/com/fesa/model/onda/OndaQuadrada.java</file>
             <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/src/java/com/fesa/model/onda/OndaDenteDeSerra.java</file>
             <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/web/response.jsp</file>
-            <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/src/java/com/fesa/model/canal/Canal.java</file>
-            <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/src/java/com/fesa/model/onda/OndaTriangular.java</file>
-            <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/src/java/com/fesa/model/canal/CanalPassaFaixa.java</file>
-            <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/src/java/com/fesa/model/canal/CanalPassaBaixa.java</file>
+            <file>file:/C:/Users/vinio/facul/ec7/Projeto_CalculaOnda/web/index.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -18,11 +18,9 @@ public class OndaQuadrada extends Onda {
     public void calcAnBn() {
         // Calcula array an e bn e An
         for (int i = 0; i < this.getNumeroHarmonicas(); i++) {
-
             double an = 0;
             double bn = i % 2 == 0 ? 0 : 4 / (Math.PI * i);
             double An = Math.sqrt(Math.pow(an, 2) + Math.pow(bn, 2));
-
             
             an = Double.isNaN(an) ? 0 : an;
             bn = Double.isNaN(bn) ? 0 : bn;

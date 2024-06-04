@@ -18,22 +18,25 @@ public class OndaSenoidalRetificada extends Onda {
     @Override
     public void calcAnBn() {
         for (int i = 0; i < this.getNumeroHarmonicas(); i++) {
-            double an = 0;
-            double bn = i == 0 ? 0 : (1 / (2 * Math.PI)) * Math.sin(Math.PI - 2 * Math.PI * i);
-            double An = bn;
+            double _an = 0;
+            
+            // TODO: Incorreto!
+            double _bn = i == 0 ? 0 : (1 / (2 * Math.PI)) * Math.sin(Math.PI - 2 * Math.PI * ((double)i));
+            double _An = _bn;
 
-            an = Double.isNaN(an) ? 0 : an;
-            bn = Double.isNaN(bn) ? 0 : bn;
-            An = Double.isNaN(An) ? 0 : An;
+            //
+            _an = Double.isNaN(_an) ? 0 : _an;
+            _bn = Double.isNaN(_bn) ? 0 : _bn;
+            _An = Double.isNaN(_An) ? 0 : _An;
 
-            an = (new BigDecimal(an).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
-            bn = (new BigDecimal(bn).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
-            An = (new BigDecimal(An).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
+//            _an = (new BigDecimal(_an).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
+//            _bn = (new BigDecimal(_bn).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
+//            _An = (new BigDecimal(_An).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
 
-            this.an[i] = an;
-            this.bn[i] = bn;
+            this.an[i] = _an;
+            this.bn[i] = _bn;
 
-            this.An[i] = An;
+            this.An[i] = _An;
         }
     }
 
