@@ -33,7 +33,7 @@ public class CanalPassaFaixa extends Canal {
             
             value = (new BigDecimal(value).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
             matriz[i] = value;
-        }   
+        }
         
         return matriz;
     }
@@ -44,7 +44,7 @@ public class CanalPassaFaixa extends Canal {
         
         for(int i=0; i < this.totalFreq; i++){
             double f = i * 1000;
-            double value = Math.toDegrees(Math.toRadians(-90) - Math.atan((f * (this.freqInicial + this.freqFinal)) / (this.freqInicial * this.freqFinal - Math.pow(f, 2))));
+            double value = Math.toDegrees(-Math.PI / 2 - Math.atan((f * (this.freqInicial + this.freqFinal)) / (this.freqInicial * this.freqFinal - Math.pow(f, 2))));
             value = Double.isNaN(value) ? 0 : value;
             
             value = (new BigDecimal(value).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();

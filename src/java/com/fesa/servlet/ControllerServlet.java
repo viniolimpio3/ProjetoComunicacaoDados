@@ -86,6 +86,7 @@ public class ControllerServlet extends HttpServlet {
             String faseCanal = om.writeValueAsString(canal.calcFaseCanal());
             String amplitudeSaida = om.writeValueAsString(ondaEntrada.calcAmplitudeSaida(canal));
             String faseSaida = om.writeValueAsString(ondaEntrada.calcFaseSaida(canal));
+            String sinalSaida = om.writeValueAsString(ondaEntrada.calcOndaRecebida(canal));
             
             request.setAttribute("emitido", emitido);
             request.setAttribute("jsonFaseEntrada", faseEntrada);
@@ -94,6 +95,8 @@ public class ControllerServlet extends HttpServlet {
             request.setAttribute("faseCanal", faseCanal);
             request.setAttribute("amplitudeSaida", amplitudeSaida);
             request.setAttribute("faseSaida", faseSaida);
+            request.setAttribute("sinalSaida", sinalSaida);
+            
 
             RequestDispatcher rd = request.getRequestDispatcher("response.jsp");
             rd.forward(request, response);

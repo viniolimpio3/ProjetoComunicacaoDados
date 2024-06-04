@@ -4,6 +4,7 @@
  */
 package com.fesa.model.onda;
 
+import com.fesa.model.canal.Canal;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -12,44 +13,6 @@ import java.math.RoundingMode;
  * @author vinio
  */
 public class OndaQuadrada extends Onda {
-
-    //TODO: Review
-    public double[] calcOndaEmitida() {
-        double frequencia = this.getFrequenciaFundamental();
-
-        // Parâmetros da onda
-        double fase = 0; // Fase inicial da onda
-
-        // Duração da onda em segundos
-        double duracao = 1; // 1 segundo
-
-        // Taxa de amostragem (samples per second)
-        int sampleRate = 10000; // Taxa de amostragem padrão para áudio
-
-        // Calculando o número de amostras necessário para representar a onda corretamente
-        int numAmostras = (int) (duracao * sampleRate);
-
-        // Intervalo de tempo entre cada amostra
-        double deltaT = 1.0 / sampleRate;
-
-        // Criando a matriz
-        double[] matriz = new double[numAmostras];
-
-        for (int i = 0; i < numAmostras; i++) {
-            // Calculando o tempo para esta amostra
-            double tempo = i * deltaT;
-            // Calculando a onda quadrada
-            double value = Math.signum(Math.sin(2 * Math.PI * frequencia * (tempo + fase)));
-            matriz[i] = value;
-        }
-        return matriz;
-    }
-
-    @Override
-    public double[] calcOndaRecebida() {
-        // TODO: David
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     @Override
     public void calcAnBn() {
@@ -95,4 +58,28 @@ public class OndaQuadrada extends Onda {
         }
     }
 
+    public double[] calcOndaRecebida(Canal canal){
+        double [] tempo = new double[10000];
+        double temp = 0; 
+        for(int i = 0; i < 10000; i++){
+            tempo[i] = temp;
+            temp += .0001;
+        }
+        double[] saida = new double[tempo.length];
+        
+        double [] AN_Saida = this.calcAmplitudeSaida(canal);
+        double [] FaseSaida = this.calcFaseSaida(canal);
+        
+        for(int j=0; j < tempo.length; j++){
+            double value =0;
+            for (int i = 0; i < this.getNumeroHarmonicas(); i++) {
+                value += AN_Saida[i] * Math.cos(2 * Math.PI * this.getFrequenciaFundamental() * i * tempo[j] + Math.toRadians(FaseSaida[i]));
+            }
+            value = Double.isNaN(value) ? 0 : value;
+            value = (new BigDecimal(value).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
+            
+            saida[j] = value; 
+        }
+        return saida;
+    }
 }

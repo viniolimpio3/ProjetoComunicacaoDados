@@ -68,7 +68,6 @@ public abstract class Onda {
     }      
     
     // Gráficos principais
-    public abstract double[] calcOndaEmitida();
     public abstract void calcAnBn();
     
     // Gráficos de Entrada
@@ -116,5 +115,29 @@ public abstract class Onda {
         }
         return saida;
     }
-    public abstract double[] calcOndaRecebida();
+    
+    public double[] calcOndaEmitida() {
+        double [] tempo = new double[10000];
+        double temp = 0; 
+        for(int i = 0; i < 10000; i++){
+            tempo[i] = temp;
+            temp += .0001;
+        }
+        double[] saida = new double[tempo.length];
+        
+        for(int j=0; j < tempo.length; j++){
+            double value =0;
+            for (int i = 0; i < this.getNumeroHarmonicas(); i++) {
+                value += this.An[i] * Math.cos(2 * Math.PI * this.getFrequenciaFundamental() * i * tempo[j] + Math.toRadians(this.fase[i]));
+            }
+            value = Double.isNaN(value) ? 0 : value;
+            value = (new BigDecimal(value).setScale(6, RoundingMode.HALF_EVEN)).doubleValue();
+            
+            saida[j] = value; 
+        }
+        return saida;
+    }
+
+    
+    public abstract double[] calcOndaRecebida(Canal canal);
 }

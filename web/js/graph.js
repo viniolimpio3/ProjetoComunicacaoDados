@@ -283,3 +283,46 @@ const chartFaseSaida = new Chart(ctxFaseSaida, {
             }
         }
     }})
+
+
+lastState = 0
+array = []
+for (let i = 0; i < sinalSaida.length; i++) {
+    let value = sinalSaida[i]
+    array.push([i, value])
+    lastState = value
+}
+
+const ctxSaida = document.getElementById('graf_saida').getContext('2d');
+const chartSaida = new Chart(ctxSaida, {
+    type: 'line',
+    data: {
+        datasets: [{
+                label: 'Onda Saída',
+                data: array,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+                pointRadius: 0, // Remove os pontos dos dados
+                fill: false,
+                stepped: false // Adiciona passos para uma onda quadrada
+            }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            x: {
+                type: 'linear',
+                position: 'bottom',
+                title: {
+                    display: true,
+                    text: 'Tempo (ms)'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Amplitude'
+                }
+            }
+        }
+    }})

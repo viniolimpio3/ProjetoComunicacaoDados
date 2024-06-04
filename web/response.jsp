@@ -12,15 +12,15 @@
             <div class="result-box">
                 <h1>Resultado</h1>
                 <div class="result-values">
-                    <p>Frequência Fundamental <span>${frequenciaFundamental} Hz</span></p>
+                    <p>Frequência Fundamental <span>${frequenciaFundamental} kHz</span></p>
                 
                     <c:choose>
                         <c:when test="${tipoCanal == 'bx'}">
-                            <p>Frequência Corte: <span>${frequenciaInicial} Hz</span></p>
+                            <p>Frequência Corte: <span>${frequenciaInicial} kHz</span></p>
                         </c:when>
                         <c:otherwise>
-                            <p>Frequência Inicial <span>${frequenciaInicial} Hz</span></p>
-                            <p>Frequência Final: <span>${frequenciaFinal} Hz</span></p>
+                            <p>Frequência Inicial <span>${frequenciaInicial} kHz</span></p>
+                            <p>Frequência Final: <span>${frequenciaFinal} kHz</span></p>
                         </c:otherwise>
                     </c:choose>
                     
@@ -83,6 +83,7 @@
         var faseCanal = <%= request.getAttribute("faseCanal") %>
         var amplitudeSaida = <%= request.getAttribute("amplitudeSaida") %>
         var faseSaida = <%= request.getAttribute("faseSaida") %>
+        var sinalSaida = <%= request.getAttribute("sinalSaida") %>
     </script>
     <script src="js/index.js" charset="UTF-8"></script>
     <script src="js/graph.js" charset="UTF-8"></script>
